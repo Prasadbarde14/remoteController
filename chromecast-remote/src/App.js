@@ -15,10 +15,10 @@ function App() {
     setCurrentTopIndex(index);
     const data = [
       {
-        device_ip: "192.168.0.50",
-        device_name: "shubham",
-        url: topTvList[currentTopIndex],
-      },
+        'device_ip': '192.168.0.50',
+        'device_name': 'shubham',
+        'url': item
+      }
     ];
 
     fetch(
@@ -46,10 +46,10 @@ function App() {
     setCurrentBottomIndex(index);
     const data = [
       {
-        device_ip: "192.168.0.5",
-        device_name: "shubham",
-        url: BottomTvList[currentBottomIndex],
-      },
+        'device_ip': '192.168.0.5',
+        'device_name': 'shubham',
+        'url': item
+      }
     ];
 
     fetch(
@@ -148,8 +148,6 @@ function App() {
       console.error("Error during POST request:", error);
     }
   };
-
-  document.addEventListener("click", () => {});
 
   return (
     <div className="main-container">
