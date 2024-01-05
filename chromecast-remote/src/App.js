@@ -347,6 +347,38 @@ function App() {
       clearInterval(bottomInterval);
     };
   }, [currentBottomIndex, currentTopIndex]);
+  const startCasting = async () => {
+    try {
+      const response = await fetch('https://ig.gaiansolutions.com:443/utility-service/stream/data/push?deviceId=COMMAND&host=192.168.28.11&port=80', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify([
+            {
+              name: "9",
+              device_ip: "192.168.0.35",
+              url: "https://npmjs.com/",
+            },{
+              name: "15",
+              device_ip: "192.168.0.99",
+              url: "https://aidtaas.com/",
+            },
+          ]
+        ),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log(data); // Log the response data if needed
+    } catch (error) {
+      console.error('Error during POST request:', error);
+    }
+  };
 
   return (
     <div className="main-container">
@@ -446,6 +478,7 @@ function App() {
           />
         </div>
       </div>
+      <button onClick={startCasting}>Start Casting on all screens</button>
     </div>
   );
 }
