@@ -29,7 +29,7 @@ function App() {
       {
         'device_ip': '192.168.0.50',
         'device_name': 'shubham',
-        'url': topTvList[currentTopIndex]
+        'url': item
       }
     ];
     
@@ -57,7 +57,7 @@ function App() {
       {
         'device_ip': '192.168.0.5',
         'device_name': 'shubham',
-        'url': BottomTvList[currentBottomIndex]
+        'url': item
       }
     ];
     
@@ -120,10 +120,6 @@ function App() {
       clearInterval(bottomInterval);
     };
   }, [currentBottomIndex, currentTopIndex]);
-
-  document.addEventListener('click', () => {
-
-  })
 
   return (
     <div className="main-container">
