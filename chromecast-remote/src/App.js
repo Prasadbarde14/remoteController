@@ -1,51 +1,42 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Listtab from "./component/Listtab/Listtab";
-import axios from 'axios';
+import axios from "axios";
 
 function App() {
   const [count, setCount] = useState(0);
   let [showtopPop, setShowtopPop] = useState(false);
   let [showbottompPop, setShowbottomPop] = useState(false);
-  let [firstapp, setfirstapp] = useState("https://www.richardsancho.com/");
-  let [secondapp, setsecondapp] = useState("https://dasherandcrank.com/");
   let [currentTopIndex, setCurrentTopIndex] = useState(0);
   let [currentBottomIndex, setCurrentBottomIndex] = useState(0);
-
-  function getFirstApp(app) {
-    setfirstapp(app);
-    console.log(firstapp);
-  }
-
-  function getSecondApp(app) {
-    setsecondapp(app);
-  }
-
   function handleTopListSelection(item) {
     console.log("handleTopListSelection item : ", item);
     const index = topTvList.indexOf(item);
     setCurrentTopIndex(index);
     const data = [
       {
-        'device_ip': '192.168.0.50',
-        'device_name': 'shubham',
-        'url': topTvList[currentTopIndex]
-      }
-    ];
-    
-    fetch('https://ig.gaiansolutions.com:443/utility-service/stream/data/push?deviceId=COMMAND&host=192.168.28.11&port=80', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+        device_ip: "192.168.0.50",
+        device_name: "shubham",
+        url: topTvList[currentTopIndex],
       },
-      body: JSON.stringify(data),
-    })
-      .then(response => {
+    ];
+
+    fetch(
+      "https://ig.gaiansolutions.com:443/utility-service/stream/data/push?deviceId=COMMAND&host=192.168.28.11&port=80",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    )
+      .then((response) => {
         console.log("response : ", response.json);
       })
-      .catch(error => {
-        console.error('Error:', error);
-      });   
+      .catch((error) => {
+        console.error("Error:", error);
+      });
 
     setShowtopPop(false);
   }
@@ -55,26 +46,28 @@ function App() {
     setCurrentBottomIndex(index);
     const data = [
       {
-        'device_ip': '192.168.0.5',
-        'device_name': 'shubham',
-        'url': BottomTvList[currentBottomIndex]
-      }
-    ];
-    
-    fetch('https://ig.gaiansolutions.com:443/utility-service/stream/data/push?deviceId=COMMAND&host=192.168.28.11&port=80', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+        device_ip: "192.168.0.5",
+        device_name: "shubham",
+        url: BottomTvList[currentBottomIndex],
       },
-      body: JSON.stringify(data),
-    })
-      .then(response => {
+    ];
+
+    fetch(
+      "https://ig.gaiansolutions.com:443/utility-service/stream/data/push?deviceId=COMMAND&host=192.168.28.11&port=80",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    )
+      .then((response) => {
         console.log("response : ", response.json);
       })
-      .catch(error => {
-        console.error('Error:', error);
-      });   
-
+      .catch((error) => {
+        console.error("Error:", error);
+      });
 
     setShowbottomPop(false);
   }
@@ -95,7 +88,7 @@ function App() {
   ];
 
   let BottomTvList = [
-       "https://dasherandcrank.com/",
+    "https://dasherandcrank.com/",
     "https://bokoko33.me/",
     "https://www.capsul-in-pro.com/home-compost-capsule/",
     "https://www.mazdausa.com/",
@@ -122,40 +115,41 @@ function App() {
   }, [currentBottomIndex, currentTopIndex]);
   const startCasting = async () => {
     try {
-      const response = await fetch('https://ig.gaiansolutions.com:443/utility-service/stream/data/push?deviceId=COMMAND&host=192.168.28.11&port=80', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify([
+      const response = await fetch(
+        "https://ig.gaiansolutions.com:443/utility-service/stream/data/push?deviceId=COMMAND&host=192.168.28.11&port=80",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify([
             {
               name: "9",
               device_ip: "192.168.0.35",
               url: "https://npmjs.com/",
-            },{
+            },
+            {
               name: "15",
               device_ip: "192.168.0.99",
               url: "https://aidtaas.com/",
             },
-          ]
-        ),
-      });
+          ]),
+        }
+      );
 
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
 
       const data = await response.json();
       console.log(data); // Log the response data if needed
     } catch (error) {
-      console.error('Error during POST request:', error);
+      console.error("Error during POST request:", error);
     }
   };
 
-  document.addEventListener('click', () => {
-
-  })
+  document.addEventListener("click", () => {});
 
   return (
     <div className="main-container">
@@ -198,7 +192,7 @@ function App() {
               <ul>
                 {topTvList.map((item, i) => (
                   <Listtab
-                    key={item+i}
+                    key={item + i}
                     title={item}
                     fn={handleTopListSelection}
                   />
@@ -261,7 +255,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
