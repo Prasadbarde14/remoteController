@@ -1,5 +1,5 @@
 .Apps_Parent {
-    width: 97%;
+    /* width: 97%; */
     height: 100%;
     position: relative;
     padding: 15px 5px 5px 5px;
@@ -12,13 +12,13 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 15px;
-    justify-content: flex-start;
-    transform: rotate(180deg);
+    justify-content: space-between;
+    /* transform: rotate(180deg); */
   }
   
-  .Apps_Close_Btn {
+  .Apps_Plus_Btn,.Apps_RightArrow_Btn {
     width: 6.444%;
-    position: absolute;
+    /* position: absolute; */
     left: 2.444%;
   }
   

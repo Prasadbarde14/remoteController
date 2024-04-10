@@ -1,5 +1,7 @@
 import React, {  useState } from "react";
-import close_btn from "./images/Close.svg";
+import add_btn from "./images/plus.svg";
+import right_arrow from "./images/right-arrow.svg";
+
 import ArrowDown_btn from "./images/Arrow Down 1.svg";
 import "./Apps.css";
 import CastingScreensDropdown from "../CastingScreenDropdown/CastingScreensDropdown";
@@ -11,13 +13,18 @@ const Apps = () => {
     setOpenDropDown(container);
   }
   return (
-
     <div className="Apps_Parent">
       <div className="topheader">
         <img
-          src={close_btn}
+          src={add_btn}
           alt="close_btn"
-          className="Apps_Close_Btn"
+          className="Apps_Plus_Btn"
+          onClick={() => navigate("/addurl")}
+        />
+        <img
+          src={right_arrow}
+          alt="Right_Arrow"
+          className="Apps_RightArrow_Btn"
           onClick={() => navigate("/grid")}
         />
         {/* <span className="Apps_Header_Content">Apps</span> */}

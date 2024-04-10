@@ -552,18 +552,18 @@ function Grid() {
         CEORoomcastcall(newCount);
         return newCount;
       });
-    }, 100000);
+    }, 120000);
 
     return () => clearInterval(interval);
   }, [tvUrls]);
 
-  function startCasting() {
-    console.log("inside startCasting-----");
-  }
+  // function startCasting() {
+  //   console.log("inside startCasting-----");
+  // }
 
-  function stopCasting() {
-    console.log("inside stopCasting-----");
-  }
+  // function stopCasting() {
+  //   console.log("inside stopCasting-----");
+  // }
 
   function navigateToApps() {
     console.log("inside log------------");
@@ -642,7 +642,7 @@ function Grid() {
       </div>
       <footer>
         <button id="appconfigBtn" onClick={navigateToApps}>
-          Select APP
+          Select Multiple APP
         </button>
         {/* <button onClick={stopCasting} id="stopCastBtn">
           Stop Casting
@@ -650,6 +650,9 @@ function Grid() {
         <button onClick={startCasting} id="castButton">
           Start Casting
         </button> */}
+        <button onClick={()=>navigate("/presentation")} id="stopCastBtn">
+          Select Presentation
+        </button>
       </footer>
     </div>
   );
