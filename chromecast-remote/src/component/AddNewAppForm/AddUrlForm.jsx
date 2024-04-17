@@ -4,7 +4,7 @@ import "./AddUrlForm.css";
 import { useNavigate } from "react-router-dom";
 
 function AddUrlForm() {
-  const [formData, setFormData] = useState({ url: "" });
+  const [formData, setFormData] = useState({ urlInput: "" });
   let navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -20,7 +20,7 @@ function AddUrlForm() {
     console.log("Form Data:", formData);
     // You can perform further actions here, such as sending the form data to an API
     // Reset the form after submission if needed
-    setFormData({ url: "" });
+    setFormData({ urlInput: "" });
     navigate("/")
   };
 
@@ -40,7 +40,7 @@ function AddUrlForm() {
           <input
             type="text"
             id="urlInput"
-            value={formData.url}
+            value={formData.urlInput}
             onChange={handleChange}
           />
           <button type="submit" id="FormSubmitButton">Submit Url</button>

@@ -20,14 +20,14 @@ function Presentations() {
           src={add_btn}
           alt="close_btn"
           className="Apps_Plus_Btn"
-          onClick={() => navigate("/addurl")}
+          onClick={() => navigate("/addpresentation")}
         />
         <span id="presentation_heading"><b>Select Presentation</b></span>
         <img
           src={right_arrow}
           alt="Right_Arrow"
           className="Apps_RightArrow_Btn"
-          onClick={() => navigate("/grid")}
+          onClick={() => navigate("/multipleapps")}
         />
         {/* <span className="Apps_Header_Content">Apps</span> */}
       </div>
@@ -36,7 +36,7 @@ function Presentations() {
         onClick={() => OpenDropDown("Dropdown-1")}
       >
         <p className="Apps_Screens_Header_Content">P1</p>
-        <img
+        {/* <img
           src={ArrowDown_btn}
           alt="ArrowDown_btn"
           className="ArrowDown_btn"
@@ -45,7 +45,7 @@ function Presentations() {
               ? { transform: "rotate(180deg)" }
               : { transform: "rotate(0deg)" }
           }
-        />
+        /> */}
       </div>
       <div
         className="Dropdown-1"
@@ -53,14 +53,14 @@ function Presentations() {
           opendropdown === "Dropdown-1" ? { height: "auto" } : { height: "0%" }
         }
       >
-        <CastingScreensDropdown opendropdown={opendropdown} tvNumber={1}/>
+        {/* <CastingScreensDropdown opendropdown={opendropdown} tvNumber={1}/> */}
       </div>
       <div
         className="Apps_Screens_Header"
         onClick={() => OpenDropDown("Dropdown-2")}
       >
         <p className="Apps_Screens_Header_Content">P2</p>
-        <img
+        {/* <img
           src={ArrowDown_btn}
           alt="ArrowDown_btn"
           className="ArrowDown_btn"
@@ -69,7 +69,7 @@ function Presentations() {
               ? { transform: "rotate(180deg)" }
               : { transform: "rotate(0deg)" }
           }
-        />
+        /> */}
       </div>
       <div
         className="Dropdown-2"
@@ -77,7 +77,7 @@ function Presentations() {
           opendropdown === "Dropdown-2" ? { height: "auto" } : { height: "0%" }
         }
       >
-        <CastingScreensDropdown opendropdown={opendropdown} tvNumber={2}/>
+        {/* <CastingScreensDropdown opendropdown={opendropdown} tvNumber={2}/> */}
       </div>
     </div>
   );

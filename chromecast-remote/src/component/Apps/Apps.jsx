@@ -25,7 +25,7 @@ const Apps = () => {
           src={right_arrow}
           alt="Right_Arrow"
           className="Apps_RightArrow_Btn"
-          onClick={() => navigate("/grid")}
+          onClick={() => navigate("/multipleapps")}
         />
         {/* <span className="Apps_Header_Content">Apps</span> */}
       </div>
